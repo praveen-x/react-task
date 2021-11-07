@@ -1,0 +1,1 @@
+how to render multiple components through react-router-dom in v6
