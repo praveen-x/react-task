@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 import Product from './Product';
 import '../styles/Home.css';
@@ -35,6 +36,14 @@ function Home() {
             </div>
 
             
+=======
+import React from 'react'
+
+function Home() {
+    return (
+        <div>
+            <h1>You are at the home page</h1>
+>>>>>>> 09f43dbcb28a75b08e92923b1ce99432e1098d6c
         </div>
     )
 }
