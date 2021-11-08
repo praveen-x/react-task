@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/Header.css';
 import { Link } from "react-router-dom";
 import SearchIcon from "@material-ui/icons/Search";
-import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket"
+import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
+import { useStateValue } from './StateProvider';
+
 function Header() {
+    const [{ basket }, dispatch] = useStateValue();
     return (
         <nav className="header">
             {/* logo on left */}
@@ -24,7 +27,7 @@ function Header() {
             <div className="header__nav">
 
                 {/* 1st */}                
-                <Link to="/" className="header__link">
+                <Link to="/sign-in" className="header__link">
                     <div className="header__option">
                         <span className="header__optionLineOne">hello Praveen</span>
                         <span className="header__optionLineTwo">Sign In</span>
@@ -32,7 +35,7 @@ function Header() {
                 </Link>
 
                 {/* 2nd */}
-                <Link to="/" className="header__link">
+                <Link to="/return-and-orders" className="header__link">
                     <div className="header__option">
                         <span className="header__optionLineOne">Returns</span>
                         <span className="header__optionLineTwo">& Orders</span>
@@ -40,7 +43,7 @@ function Header() {
                 </Link>
 
                 {/* 3rd */}
-                <Link to="/" className="header__link">
+                <Link to="/your-prime" className="header__link">
                     <div className="header__option">
                         <span className="header__optionLineOne">Your</span>
                         <span className="header__optionLineTwo">Prime</span>
@@ -48,10 +51,10 @@ function Header() {
                 </Link>
 
                 {/* 4th */}
-                <Link to="/" className="header__link">
+                <Link to="/checkout" className="header__link">
                     <div className="header__optionBasket">   
                         <ShoppingBasketIcon />                     
-                        <span className="header__optionLineTwo header__basket">0</span>
+                        <span className="header__optionLineTwo header__basketCount">{basket?.length}</span>
                     </div>
                 </Link>
 
